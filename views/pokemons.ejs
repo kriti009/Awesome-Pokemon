@@ -1,0 +1,14 @@
+	<div><%= pokemons["name"] %> </div>
+	<img src=<%= img_url.front%> alt="Pokemon">	
+	<img src=<%= img_url.back%> alt="Pokemon">	
+	<form method=GET action="/pokemons/<%= ++id %>" >
+		<% if((id-1) % 3 !=0){ %>
+			<input type='submit' value="upgrade">
+		<% }; %>
+	</form>
+	<div>Type - <%= pokemons["types"][0]['type']['name'] %></div>
+	<h3>Attacks</h3>
+	<% pokemons["moves"].forEach(function(pokemon){ %>	
+		<li><%= pokemon["move"]["name"] %></li>
+	<% }); %>
+	
