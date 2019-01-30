@@ -1,4 +1,8 @@
-	<div><%= pokemons["name"] %> </div>
+<% include ./partials/header.ejs %> 
+<div class="container" style="margin:0 auto">
+	<div class="page-header">
+		<%= pokemons["name"] %>
+	</div>
 	<img src=<%= img_url.front%> alt="Pokemon">	
 	<img src=<%= img_url.back%> alt="Pokemon">	
 	<form method=GET action="/pokemons/<%= ++id %>" >
@@ -11,4 +15,5 @@
 	<% pokemons["moves"].forEach(function(pokemon){ %>	
 		<li><%= pokemon["move"]["name"] %></li>
 	<% }); %>
-	
+</div>
+<% include ./partials/footer.ejs %> 	
